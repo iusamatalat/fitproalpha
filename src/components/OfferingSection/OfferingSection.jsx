@@ -62,6 +62,7 @@ const OfferingSection = () => {
 
             <div className="min-h-[130px] lg:min-h-[160px] flex items-center justify-center mb-6">
               <h4 className="font-montserrat font-black text-[2.1rem] lg:text-[2.6rem] xl:text-[3rem] tracking-tighter uppercase text-white drop-shadow-md leading-[1.05]">
+                <span className="block">Fit Pro</span>
                 <span className="block">Limitless</span>
                 <span className="block">Alpha</span>
               </h4>
@@ -90,8 +91,9 @@ const OfferingSection = () => {
 
             <div className="min-h-[130px] lg:min-h-[160px] flex items-center justify-center mb-6">
               <h4 className="font-montserrat font-black text-[2.1rem] lg:text-[2.6rem] xl:text-[3rem] tracking-tighter uppercase text-white drop-shadow-md leading-[1.05]">
-                <span className="block">Peer</span>
-                <span className="block">Premium</span>
+                <span className="block">Fit Pro</span>
+                <span className="block">Alpha</span>
+                <span className="block">Premium Community</span>
               </h4>
             </div>
 
