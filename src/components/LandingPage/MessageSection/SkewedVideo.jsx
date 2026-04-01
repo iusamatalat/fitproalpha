@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import bgVideo from '../../assets/bg.mp4';
+import bgVideo from '../../../assets/bg.mp4';
 
 const SkewedVideo = () => {
   const [scrollProgress, setScrollProgress] = useState(0);

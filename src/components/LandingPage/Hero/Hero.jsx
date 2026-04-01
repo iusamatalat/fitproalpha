@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, Star } from 'lucide-react';
-import bgVideo from '../../assets/bg.mp4';
+import bgVideo from '../../../assets/bg.mp4';
 
 const Hero = () => {
   return (

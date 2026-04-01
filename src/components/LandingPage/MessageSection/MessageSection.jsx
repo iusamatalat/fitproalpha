@@ -15,7 +15,7 @@ const MessageSection = () => {
         <div className="container mx-auto px-6 max-w-5xl flex justify-center items-center mt-6 mb-4 relative z-20">
           <button className="group relative inline-flex items-center justify-center bg-brand-green text-black font-inter font-black uppercase tracking-widest text-sm md:text-lg px-10 md:px-14 py-4 md:py-[1.15rem] rounded-full shadow-[0_10px_40px_rgba(187,246,0,0.35)] transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_15px_50px_rgba(187,246,0,0.55)] active:scale-[0.97] overflow-hidden">
             <span className="relative z-10 flex items-center gap-3">
-              Get Your Free Proposal
+              Book Your Free Strategy Call Now
               <ArrowRight className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300 group-hover:translate-x-1.5 stroke-[3]" />
             </span>
             {/* Elegant glass/white sweep effect hidden natively on hover */}

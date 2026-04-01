@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import Logo from '../../assets/logo.svg';
+import Logo from '../../../assets/logo.svg';
 
 const PlatformSection = () => {
   return (
