@@ -1,7 +1,8 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import SkewedVideo from './SkewedVideo';
-import MessageDividerBorder from '../Borders/MessageDividerBorder';
+import founderImg from '../../../assets/founder.png';
+import gymBg from '../../../assets/gym_bg.png';
 
 const MessageSection = () => {
   return (
@@ -24,72 +25,95 @@ const MessageSection = () => {
         </div>
       </div>
 
-      {/* The geometric border separating White from Light Grey natively */}
-      <MessageDividerBorder />
 
-      {/* The Light Grey Section containing the letter */}
-      <div className="w-full bg-zinc-100 text-zinc-900 pb-32 pt-16">
-        <div className="container mx-auto px-6 max-w-4xl relative z-10 text-left">
+
+      {/* The Dark Section containing the letter with Background Image */}
+      <div className="relative w-full pb-32 pt-16 mt-0">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0 overflow-hidden bg-black">
+          <div className="absolute inset-0 bg-brand-green/30 mix-blend-multiply z-10" />
+          <div className="absolute inset-0 bg-black/60 z-10" />
+          <img src={gymBg} className="w-full h-full object-cover object-center opacity-100 scale-105 brightness-110" alt="Gym Background" />
+        </div>
+
+        <div className="container mx-auto px-6 max-w-7xl relative z-20 text-left">
            
-           {/* Date Tag */}
-           <div className="mb-12 inline-block">
-             <p className="text-xs md:text-sm font-black font-inter text-black uppercase tracking-tight">
-               Updated: 25th of March, 2026
-             </p>
-             <div className="w-full h-[2px] bg-brand-green mt-1" />
-           </div>
-
-           {/* Letter Intro */}
-           <p className="font-inter text-2xl md:text-[1.7rem] text-zinc-900 leading-relaxed font-bold mb-8">
-             Dear Fitness Professional,
-           </p>
-
-           {/* Core Sales Letter Content */}
-           <div className="font-inter text-lg md:text-[1.15rem] text-zinc-700 leading-[1.8] max-w-3xl space-y-6">
-             <p>
-               Are you absolutely sick and tired of grinding for likes, views, and followers... while your bank account stays frustratingly flat?
-             </p>
-             <p>
-               Or maybe your coaching business is doing <i>okay</i>. You've got a decent roster of clients, but you're working 14-hour days, answering DMs at 11 PM, and you know deep down you are leaving hundreds of thousands of dollars on the table.
-             </p>
-             <p>
-               If you want to absolutely dominate the fitness space, scale your coaching offers to the moon, and build a highly profitable empire that runs like a machine... <strong className="font-bold text-black bg-[#d7ff00]/40 px-1">then this will be the most important page you'll ever read.</strong>
-             </p>
+           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
              
-             <h3 className="font-montserrat font-black text-2xl md:text-3xl text-black uppercase tracking-tight mt-12 mb-6">
-               Here Is The Brutal Truth...
-             </h3>
-             
-             <p>
-               The online fitness industry is more saturated than ever. Every single day, another "influencer" with a ring light and a cheap templated app pops up trying to steal your market share. 
-             </p>
-             <p>
-               Posting workout reels and praying the algorithm blesses you is <strong className="font-bold text-black border-b-[3px] border-brand-green">NOT</strong> a scalable business model. It's a guaranteed recipe for total burnout.
-             </p>
-             <p>
-               You don't need more social media "hacks" or a prettier Instagram aesthetic. You need a ruthlessly efficient, predictable system that turns cold attention into high-paying clients on demand.
-             </p>
+             {/* Left Column: Shorter Message */}
+             <div className="lg:col-span-7 xl:col-span-6 flex flex-col justify-center">
 
-             <div className="bg-white p-6 md:p-8 border-l-[6px] border-black shadow-[10px_10px_0px_rgba(187,246,0,1)] my-12 relative overflow-hidden group">
-               <h4 className="font-black font-montserrat tracking-tight text-xl md:text-2xl mb-4 text-black uppercase relative z-10">What We Do At Fit Pro Alpha</h4>
-               <p className="font-medium text-zinc-600 relative z-10 leading-relaxed">
-                 We don't just "run ads." We engineer aggressive, full-funnel scaling systems exclusively for elite fitness influencers and coaches. We guarantee our outcomes with our own capital. If we don't multiply your revenue, we work for free until we do.
-               </p>
-               {/* Decorative background element for the blockquote */}
-               <div className="absolute top-0 right-0 w-32 h-32 bg-brand-green/10 rounded-full translate-x-12 -translate-y-12 transition-transform duration-500 group-hover:scale-[2]" />
+               {/* Hook */}
+               <h2 className="font-montserrat font-black text-4xl md:text-5xl lg:text-6xl text-white uppercase tracking-tight leading-[1.05] mb-8">
+                 Stop Trading Time <br className="hidden md:block"/>
+                 <span className="text-black bg-brand-green px-3 py-1 mt-3 inline-block leading-none border-2 border-brand-green transform -skew-x-3 shadow-[4px_4px_0_#000]">For Pennies.</span>
+               </h2>
+
+               {/* Shorter Core Sales Letter Content */}
+               <div className="font-inter text-lg md:text-[1.15rem] text-zinc-300 leading-[1.8] space-y-6 lg:pr-8">
+                 <p className="font-semibold text-xl text-white border-l-4 border-brand-green pl-5 py-1">
+                   If you're still relying on viral reels and algorithm luck to get clients, you're building a business on quicksand.
+                 </p>
+
+                 <div className="bg-zinc-900 p-6 md:p-8 border-t-[6px] border-brand-green shadow-[8px_8px_0px_#000] my-8 relative overflow-hidden group">
+                   <h4 className="font-black font-montserrat tracking-tight text-xl mb-4 text-white uppercase relative z-10 flex items-center gap-3">
+                     <span className="w-2.5 h-2.5 bg-brand-green rounded-full block" />
+                     The Alpha Difference
+                   </h4>
+                   <p className="font-medium text-zinc-400 relative z-10 leading-relaxed text-base md:text-lg">
+                     We build ruthless, fully-automated acquisition machines. You coach. We scale. If you don't grow, we pay you. Simple.
+                   </p>
+                   {/* Decorative background element for the blockquote */}
+                   <div className="absolute top-0 right-0 w-32 h-32 bg-brand-green/10 rounded-full translate-x-12 -translate-y-12 transition-transform duration-500 group-hover:scale-[2]" />
+                 </div>
+                 
+                 <p className="font-black font-montserrat uppercase tracking-tight text-white mt-10 text-2xl md:text-3xl leading-tight">
+                   Ready to dominate? <br />Let's get to work.
+                 </p>
+               </div>
              </div>
 
-             <p>
-               If you're ready to stop playing small and start building a legacy, you need to read every single word on this page. But be warned: we only partner with professionals who are hungry for absolute market domination.
-             </p>
-             
-             <p className="font-bold text-black mt-8 text-xl">
-               Let's get to work.
-             </p>
+             {/* Right Column: Founder Image with Bottom Graphics */}
+             <div className="lg:col-span-5 xl:col-span-6 lg:ml-8 relative mt-10 lg:mt-0">
+               
+               {/* Decorative solid outline frame */}
+               <div className="absolute inset-0 translate-x-4 translate-y-4 lg:translate-x-8 lg:translate-y-8 bg-brand-green shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-2 border-black overflow-hidden z-0" />
+               
+               {/* Image Container */}
+               <div className="relative bg-zinc-900 overflow-hidden border-2 border-black z-10 w-full h-[500px] md:h-[650px] lg:h-[700px]">
+                 <img
+                   src={founderImg}
+                   alt="Founder of Fit Pro Alpha"
+                   className="w-full h-full object-cover object-center"
+                 />
+                 
+                 {/* Bottom Graphic Info Box Overlay */}
+                 <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8 flex flex-col justify-end z-20">
+                   <div className="bg-black/95 backdrop-blur-sm border-l-[6px] border-brand-green p-6 shadow-2xl relative overflow-hidden">
+                     <div className="absolute top-0 right-0 w-16 h-16 bg-brand-green/10 rounded-full translate-x-8 -translate-y-8" />
+                     
+                     <h3 className="text-white font-montserrat font-black text-2xl md:text-3xl uppercase tracking-widest relative z-10">
+                       Name
+                     </h3>
+                     <p className="text-brand-green font-inter font-black tracking-widest text-xs md:text-sm mt-1 uppercase relative z-10">
+                       Founder & Master Strategist
+                     </p>
+                     
+                     <div className="h-px w-16 bg-zinc-800 my-4 relative z-10" />
+                     
+                     <p className="text-zinc-400 font-inter text-sm md:text-base leading-relaxed hidden sm:block relative z-10">
+                       Line from Founder
+                     </p>
+                   </div>
+                 </div>
+               </div>
+               
+             </div>
+
            </div>
         </div>
         {/* Massive dynamic spacer allowing the OfferingBorder's negative margin to consume this space natively */}
-        <div className="h-[60px] md:h-[120px] lg:h-[180px] w-full bg-transparent pointer-events-none mt-12" />
+        <div className="h-[60px] md:h-[120px] lg:h-[180px] w-full bg-transparent pointer-events-none mt-12 relative z-20" />
       </div>
 
     </section>
