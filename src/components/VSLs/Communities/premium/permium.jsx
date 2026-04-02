@@ -5,14 +5,14 @@ import logoUrl from '../../../../assets/logo.png';
 const PremiumVSL = () => {
   return (
     <div className="min-h-screen bg-brand-black text-white font-inter selection:bg-brand-green selection:text-black">
-      
+
       {/* 1. Hook & Headline Section */}
       <section className="relative pt-32 pb-24 px-6 md:px-12 flex flex-col items-center justify-center text-center overflow-hidden border-b border-zinc-900">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-brand-green/10 blur-[150px] rounded-full pointer-events-none z-0" />
-        
+
         <div className="relative z-10 w-full max-w-5xl mx-auto">
           <img src={logoUrl} alt="Fit Pro Alpha Logo" className="h-[50px] md:h-[70px] mx-auto mb-10" style={{ filter: 'brightness(0) saturate(100%) invert(88%) sepia(85%) saturate(3061%) hue-rotate(24deg) brightness(109%) contrast(98%)' }} />
-          
+
           <div className="inline-flex items-center gap-2 bg-zinc-900 border border-brand-green/30 px-5 py-2 mb-8 relative group">
             <Star className="w-4 h-4 text-brand-green fill-brand-green" />
             <span className="text-brand-green font-bold text-sm md:text-base uppercase tracking-widest relative z-10">
@@ -21,7 +21,7 @@ const PremiumVSL = () => {
           </div>
 
           <h1 className="font-montserrat font-black text-5xl sm:text-6xl md:text-7xl leading-[1.1] uppercase tracking-tighter mb-10 text-white drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
-            The Fastest Way for Health & Fitness Coaches to Hit <span className="text-brand-green border-b-[6px] border-brand-green pb-2 inline-block">$1,000+/Month</span> <br className="hidden lg:block"/> in 30-60 Days Without Years of Trial & Error.
+            The Fastest Way for Health & Fitness Coaches to Hit <span className="text-brand-green border-b-[6px] border-brand-green pb-2 inline-block">$1,000+/Month</span> <br className="hidden lg:block" /> in 30-60 Days Without Years of Trial & Error.
           </h1>
 
           <div className="text-xl md:text-2xl text-zinc-300 font-medium max-w-4xl mx-auto leading-relaxed mb-12 text-left bg-black/50 p-8 border-l-4 border-red-500 shadow-2xl">
@@ -41,7 +41,7 @@ const PremiumVSL = () => {
       {/* 2. The Solution & Proof */}
       <section className="py-24 px-6 md:px-12 relative bg-zinc-950">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
+
           <div className="relative z-10">
             <h2 className="font-montserrat font-black text-4xl md:text-5xl lg:text-6xl uppercase tracking-tighter text-white mb-8">
               The <span className="text-brand-green">Solution</span>
@@ -49,7 +49,7 @@ const PremiumVSL = () => {
             <p className="text-xl text-zinc-300 leading-relaxed mb-8 font-medium">
               A step-by-step system with proven strategies, elite mentorship, and a supportive network to help coaches scale predictably. No guesswork, just execution.
             </p>
-            
+
             <div className="space-y-6">
               <div className="bg-black border border-zinc-800 p-6 flex items-start gap-5 hover:border-brand-green transition-colors">
                 <MonitorPlay className="w-10 h-10 text-brand-green shrink-0" strokeWidth={1.5} />
@@ -73,7 +73,7 @@ const PremiumVSL = () => {
             <h3 className="font-montserrat font-black text-3xl uppercase mb-8 text-brand-green flex items-center gap-4">
               <Trophy className="w-8 h-8" /> Wall of Wins
             </h3>
-            
+
             <div className="space-y-6">
               <div className="border-b border-zinc-800 pb-4">
                 <h4 className="font-montserrat font-bold text-xl uppercase text-white mb-1">Saeeda Maryam</h4>
@@ -107,7 +107,7 @@ const PremiumVSL = () => {
           <p className="text-xl md:text-3xl font-medium max-w-4xl mx-auto leading-relaxed mb-10 text-black/80">
             Scale to <strong className="font-black text-black underline decoration-4 underline-offset-4">$12,000/year</strong> in 12 months, or our entire team will work for you for <strong className="font-black text-black">FREE</strong> until you do.
           </p>
-          
+
           <div className="bg-black/10 border-2 border-black/20 p-6 md:p-8 max-w-3xl mx-auto text-left font-semibold text-lg">
             <p className="uppercase tracking-widest font-black text-xs mb-4 text-black/60">The Simple Conditions:</p>
             <ul className="space-y-3">
@@ -129,7 +129,7 @@ const PremiumVSL = () => {
             </h2>
             <p className="text-xl text-zinc-400 font-medium">Bite-sized, actionable steps taking just minutes a day.</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { id: '01', title: 'Niche & Offer Design', desc: 'Craft irresistible offers that command $997+ price tags effortlessly.' },
@@ -150,11 +150,11 @@ const PremiumVSL = () => {
       {/* 5. Investment & Bonuses */}
       <section className="py-24 px-6 md:px-12 bg-zinc-950 border-t border-zinc-900">
         <div className="max-w-5xl mx-auto text-center">
-          
+
           <div className="mb-16">
-             <div className="inline-flex items-center gap-2 bg-brand-green text-black font-bold uppercase tracking-widest text-xs md:text-sm px-6 py-2 mb-6 shadow-[5px_5px_0px_white]">
-               <Zap className="w-4 h-4" /> Elite Access
-             </div>
+            <div className="inline-flex items-center gap-2 bg-brand-green text-black font-bold uppercase tracking-widest text-xs md:text-sm px-6 py-2 mb-6 shadow-[5px_5px_0px_white]">
+              <Zap className="w-4 h-4" /> Elite Access
+            </div>
             <h2 className="font-montserrat font-black text-5xl md:text-6xl uppercase tracking-tighter text-white mb-4">
               Choose Your <span className="text-brand-green">Ascension</span>
             </h2>
@@ -184,12 +184,12 @@ const PremiumVSL = () => {
                   <span className="text-brand-green font-bold text-2xl mt-2">$</span>
                   <span className="font-montserrat font-black text-7xl text-white tracking-tighter drop-shadow-lg">1500</span>
                 </div>
-                
+
                 <ul className="text-left space-y-4 text-zinc-300 font-medium mb-10 bg-zinc-900 p-6 rounded-lg border border-zinc-800">
-                  <li className="flex gap-3"><CheckCircle2 className="text-brand-green shrink-0 w-5 h-5"/> <span className="font-bold text-white">100% Money-Back Guarantee</span></li>
-                  <li className="flex gap-3"><CheckCircle2 className="text-brand-green shrink-0 w-5 h-5"/> Priority Support List</li>
-                  <li className="flex gap-3"><CheckCircle2 className="text-brand-green shrink-0 w-5 h-5"/> Private WhatsApp Access</li>
-                  <li className="flex gap-3"><CheckCircle2 className="text-brand-green shrink-0 w-5 h-5"/> Detailed Audits (10x faster results)</li>
+                  <li className="flex gap-3"><CheckCircle2 className="text-brand-green shrink-0 w-5 h-5" /> <span className="font-bold text-white">100% Money-Back Guarantee</span></li>
+                  <li className="flex gap-3"><CheckCircle2 className="text-brand-green shrink-0 w-5 h-5" /> Priority Support List</li>
+                  <li className="flex gap-3"><CheckCircle2 className="text-brand-green shrink-0 w-5 h-5" /> Private WhatsApp Access</li>
+                  <li className="flex gap-3"><CheckCircle2 className="text-brand-green shrink-0 w-5 h-5" /> Detailed Audits (10x faster results)</li>
                 </ul>
               </div>
               <a href="https://www.skool.com/limitless-alphas" className="w-full block text-center bg-brand-green hover:bg-white text-black font-black uppercase tracking-widest py-5 transition-colors text-lg shadow-xl">Join Elite Annual</a>
@@ -207,7 +207,7 @@ const PremiumVSL = () => {
               </div>
             </div>
           </div>
-          
+
         </div>
       </section>
 
@@ -217,7 +217,7 @@ const PremiumVSL = () => {
           <h2 className="font-montserrat font-black text-4xl md:text-5xl uppercase tracking-tighter text-white mb-10">
             How to Finalize Your Entry
           </h2>
-          
+
           <div className="flex flex-col md:flex-row gap-6 justify-center mb-12 text-left">
             <div className="bg-zinc-950 p-6 border border-zinc-900 flex-1 relative">
               <span className="text-brand-green font-black text-4xl absolute top-6 right-6 opacity-20">1</span>
@@ -236,7 +236,7 @@ const PremiumVSL = () => {
             </div>
           </div>
 
-          <a 
+          <a
             href="https://www.skool.com/limitless-alphas"
             target="_blank"
             rel="noopener noreferrer"

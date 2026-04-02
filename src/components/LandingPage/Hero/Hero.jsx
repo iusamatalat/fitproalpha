@@ -31,7 +31,7 @@ const Hero = () => {
         </h1>
 
         <p className="font-inter text-zinc-300 antialiased text-lg md:text-xl lg:text-[1.35rem] max-w-3xl mb-12 leading-relaxed">
-          We guarantee our results. If we don’t hit the targets we set for your campaign, we work for free until we do.
+          We build elite client-acquisition systems exclusively for health and fitness coaches. Stop chasing unqualified leads, and start scaling your online business predictably.
         </p>
 
         {/* Email Capture & CTA */}

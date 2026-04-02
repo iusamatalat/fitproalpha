@@ -1,77 +1,183 @@
-import React from 'react';
-import { Play } from 'lucide-react';
+import React, { useState } from 'react';
+import { Play, Star, ChevronRight } from 'lucide-react';
 
 const testimonials = [
-  { id: 1, name: 'LEE SELKIRK', image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=500&h=300&fit=crop' },
-  { id: 2, name: 'SELMA CHRISTOFI', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=300&fit=crop' },
-  { id: 3, name: 'ADAM HURDLEY', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=300&fit=crop' },
-  { id: 4, name: 'TYE SPIERINGS', image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&h=300&fit=crop' },
-  { id: 5, name: 'ROHAN FISHER', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=300&fit=crop' },
+  { 
+    id: 1, 
+    name: 'LEE SELKIRK', 
+    role: 'Owner, Apex Training',
+    quote: '"Fit Pro Alpha systems helped us scale from $10k to $60k MRR in just 90 days. The blueprint is simply unmatched."',
+    image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1080&h=720&fit=crop' 
+  },
+  { 
+    id: 2, 
+    name: 'SELMA CHRISTOFI', 
+    role: 'Founder, Elevate Fitness',
+    quote: '"I was exhausted doing organic outreach. Now, high-ticket clients come to us on absolute autopilot."',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1080&h=720&fit=crop' 
+  },
+  { 
+    id: 3, 
+    name: 'ADAM HURDLEY', 
+    role: 'Head Coach, Iron Tribe',
+    quote: '"The AI workflows saved me 20 hours a week. I finally have my weekends back while the business grows."',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1080&h=720&fit=crop' 
+  },
+  { 
+    id: 4, 
+    name: 'TYE SPIERINGS', 
+    role: 'CEO, Spierings Elite',
+    quote: '"We doubled our conversion rate in week one. The sales scripts provided in the playbook are pure gold."',
+    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=1080&h=720&fit=crop' 
+  },
+  { 
+    id: 5, 
+    name: 'ROHAN FISHER', 
+    role: 'Owner, Fisher Performance',
+    quote: '"A completely done-for-you machine. If you want to dominate your local market, this is the only way."',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1080&h=720&fit=crop' 
+  },
+  {
+    id: 6,
+    name: 'SARAH JENKINS',
+    role: 'Founder, SJ Athletics',
+    quote: '"From completely stagnant to hiring 3 new coaches to handle the lead volume. It fundamentally changed everything."',
+    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1080&h=720&fit=crop'
+  }
 ];
 
 const TestimonialsSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeItem = testimonials[activeIndex];
+
   return (
-    <section className="w-full relative bg-[#222]">
-      {/* Main Featured Testimonial Hero */}
-      <div className="relative w-full h-[600px] md:h-[700px] flex items-center justify-center">
-        {/* Background Image with Dark Overlay */}
-        <div className="absolute inset-0 w-full h-full">
-          <img 
-            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&h=1080&fit=crop" 
-            alt="Main Testimonial Background" 
-            className="w-full h-full object-cover grayscale-[0.2]"
-          />
-          <div className="absolute inset-0 bg-[#222]/70"></div>
-        </div>
-
-        {/* Featured Content */}
-        <div className="relative z-10 container mx-auto px-6 flex flex-col items-center text-center -mt-16">
-          {/* Logo */}
-          <div className="mb-6 flex flex-col items-center">
-            <span className="font-montserrat font-black text-white text-[2.5rem] drop-shadow-md leading-none">m</span>
-            <span className="text-[10px] text-white font-montserrat font-bold tracking-[0.2em] uppercase mt-1 drop-shadow-sm">metricon</span>
-          </div>
-
-          <p className="font-inter text-xl md:text-2xl lg:text-[1.8rem] text-white font-medium max-w-4xl text-center leading-relaxed mb-6 drop-shadow-md">
-            "Since partnering with Fit Pro Alpha the results have been nothing short of outstanding. There are three simple words here and that is: Leads! Leads! Leads!"
-          </p>
-
-          <p className="font-montserrat font-bold text-brand-green text-xs md:text-sm tracking-widest uppercase mb-12 drop-shadow-md">
-            Domenic Varese, Marketing Manager, Metricon
-          </p>
-
-          <button className="w-20 h-20 bg-[#99cc00]/90 hover:bg-brand-green border-[3px] border-transparent text-black rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-[0_0_20px_rgba(204,255,0,0.2)] group hover:shadow-[0_0_30px_rgba(204,255,0,0.4)]">
-            <Play className="w-8 h-8 ml-1 fill-current stroke-[1.5]" />
-          </button>
-        </div>
+    <section className="relative w-full bg-[#111] pt-24 pb-32 overflow-hidden">
+      {/* Background Decorative Graphic */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-[800px] h-[800px] bg-brand-green/5 blur-[150px] rounded-full mix-blend-screen" />
+        <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-cyan-600/5 blur-[150px] rounded-full mix-blend-screen" />
       </div>
 
-      {/* Video Thumbnails Marquee */}
-      <div className="relative bg-[#222] pt-8 pb-16 z-20 md:-mt-16 bg-gradient-to-t from-[#222] via-[#222]/80 to-transparent">
-        {/* Left/Right Fade out Corridors */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-[5%] bg-gradient-to-r from-[#222] to-transparent z-10"></div>
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-[5%] bg-gradient-to-l from-[#222] to-transparent z-10"></div>
+      <div className="container mx-auto px-6 max-w-[1500px] relative z-10">
+        
+        {/* Header Section */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+          <div className="max-w-3xl">
+            <h2 className="font-montserrat font-black text-5xl md:text-7xl lg:text-8xl text-white uppercase tracking-tighter leading-[1.1] md:leading-none mb-4">
+              Real <span className="text-brand-green text-transparent bg-clip-text bg-gradient-to-r from-brand-green to-lime-300">Results.</span>
+            </h2>
+            <p className="font-inter text-zinc-400 text-lg md:text-xl font-medium">
+              Don't just take our word for it. Here is the raw, unedited truth from coaches who implemented our systems.
+            </p>
+          </div>
+        </div>
 
-        <div className="flex overflow-x-hidden group">
-          <div className="animate-marquee hover:[animation-play-state:paused] flex items-center gap-4 md:gap-6 px-4">
-            {[...testimonials, ...testimonials, ...testimonials].map((testimonial, i) => (
-              <div key={i} className="flex flex-col items-center gap-3 shrink-0 cursor-pointer group/card w-[260px] md:w-[320px]">
-                <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border-[3px] border-transparent group-hover/card:border-brand-green/30 transition-all duration-300">
-                  <img src={testimonial.image} alt={testimonial.name} className="absolute inset-0 w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-black/40 group-hover/card:bg-black/10 transition-colors duration-300"></div>
-                  {/* Small internal play icon wrapper */}
-                  <div className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center bg-black/30 backdrop-blur-sm rounded flex items-center justify-center">
-                    <Play className="w-4 h-4 text-white/90 fill-white/90 drop-shadow-md group-hover/card:text-brand-green transition-colors" />
+        {/* Masterclass Layout Grid */}
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-12">
+          
+          {/* Featured Video Player (Left Side) */}
+          <div className="xl:col-span-8 flex flex-col h-full animate-[fadeIn_0.6s_ease-out]">
+            <div className="relative w-full aspect-square sm:aspect-video md:aspect-[21/9] xl:aspect-auto xl:h-[700px] rounded-[2rem] overflow-hidden group shadow-[0_20px_50px_rgba(0,0,0,0.8)] border-[3px] border-zinc-800 hover:border-brand-green/50 transition-colors duration-500 bg-black">
+              
+              {/* Image with slow zoom */}
+              <img 
+                key={`img-${activeItem.id}`}
+                src={activeItem.image} 
+                alt={activeItem.name} 
+                className="absolute inset-0 w-full h-full object-cover animate-[kenburns_20s_infinite_alternate] opacity-80"
+              />
+              
+              {/* Cinematic Vignette/Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-[#111]/40 to-transparent opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#111]/80 via-transparent to-transparent opacity-90" />
+              
+              {/* Massive Play Button */}
+              <div className="absolute top-1/3 left-1/2 -translate-x-1/2 md:translate-x-0 md:top-auto md:bottom-1/2 md:inset-0 md:flex md:items-center md:justify-center pointer-events-none z-20">
+                <div className="relative w-20 h-20 md:w-32 md:h-32 rounded-full flex items-center justify-center bg-brand-green/20 backdrop-blur-md border-2 border-brand-green/50 shadow-[0_0_50px_rgba(204,255,0,0.4)] group-hover:scale-110 group-hover:bg-brand-green/30 transition-all duration-500 cursor-pointer pointer-events-auto">
+                  <Play className="w-8 h-8 md:w-14 md:h-14 text-white fill-white ml-2 drop-shadow-lg" />
+                  {/* Pulsing ring */}
+                  <div className="absolute inset-0 rounded-full border-2 border-brand-green animate-[ping_2s_ease-out_infinite] opacity-20" />
+                </div>
+              </div>
+
+              {/* Lower Third Info Card */}
+              <div key={`info-${activeItem.id}`} className="absolute bottom-0 left-0 w-full md:w-3/4 lg:w-2/3 p-6 md:p-10 animate-[slideUp_0.5s_ease-out] z-30">
+                <div className="flex items-center gap-1.5 mb-4">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-4 h-4 md:w-6 md:h-6 text-brand-green fill-brand-green" />
+                  ))}
+                </div>
+                <h3 className="font-montserrat font-black text-2xl md:text-3xl lg:text-4xl text-white uppercase tracking-wide mb-2 drop-shadow-md">
+                  {activeItem.name}
+                </h3>
+                <p className="font-inter text-brand-green font-bold text-xs md:text-md uppercase tracking-widest mb-4">
+                  {activeItem.role}
+                </p>
+                <div className="p-4 md:p-6 bg-black/50 backdrop-blur-lg rounded-xl border-l-[4px] border-brand-green shadow-xl">
+                    <p className="font-inter text-zinc-200 text-sm md:text-lg lg:text-xl font-medium leading-relaxed drop-shadow-lg italic">
+                    {activeItem.quote}
+                    </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Playlist Roster (Right Side) */}
+          <div className="xl:col-span-4 flex flex-col h-full space-y-3 md:space-y-4 overflow-y-auto max-h-[600px] xl:max-h-[700px] pr-2 xl:pr-4 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-zinc-800 [&::-webkit-scrollbar-thumb]:rounded-full">
+            {testimonials.map((test, index) => {
+              const isActive = index === activeIndex;
+              return (
+                <div 
+                  key={test.id}
+                  onClick={() => setActiveIndex(index)}
+                  className={`flex items-stretch md:items-center gap-4 p-3 md:p-4 rounded-2xl cursor-pointer transition-all duration-300 group ${
+                    isActive 
+                      ? 'bg-zinc-800/80 border-l-[6px] border-brand-green shadow-lg scale-[1.02]' 
+                      : 'bg-[#1a1a1a] border-l-[6px] border-transparent hover:bg-zinc-800/50 hover:border-zinc-600'
+                  }`}
+                >
+                  {/* Thumbnail */}
+                  <div className="relative w-24 h-28 md:w-36 md:h-24 shrink-0 rounded-xl overflow-hidden border-2 border-zinc-700 group-hover:border-brand-green/50 transition-colors">
+                    <img src={test.image} alt={test.name} className={`w-full h-full object-cover transition-transform duration-700 ${isActive ? 'scale-110' : 'grayscale-[0.5] group-hover:grayscale-0 group-hover:scale-105'}`} />
+                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                      <Play className={`w-5 h-5 md:w-6 md:h-6 ml-1 transition-colors ${isActive ? 'text-brand-green fill-brand-green' : 'text-white/80 fill-white/80 group-hover:text-white'}`} />
+                    </div>
+                  </div>
+
+                  {/* Thumbnail Info */}
+                  <div className="flex-1 flex flex-col justify-center py-1">
+                    <h4 className={`font-montserrat font-black text-xs md:text-sm uppercase tracking-wider mb-1 ${isActive ? 'text-brand-green' : 'text-zinc-200 group-hover:text-white'}`}>
+                      {test.name}
+                    </h4>
+                    <p className="font-inter text-zinc-500 text-[10px] md:text-xs font-medium line-clamp-3 leading-snug">
+                      {test.quote}
+                    </p>
+                  </div>
+
+                  {/* Action Icon */}
+                  <div className="shrink-0 pl-1 md:pl-2 flex items-center justify-center">
+                    <ChevronRight className={`w-5 h-5 transition-transform duration-300 ${isActive ? 'text-brand-green translate-x-1' : 'text-zinc-600 group-hover:text-zinc-400 group-hover:translate-x-1'}`} />
                   </div>
                 </div>
-                <span className="font-montserrat font-black text-brand-green text-[10px] md:text-xs uppercase tracking-[0.2em] transform group-hover/card:translate-y-1 transition-transform">
-                  {testimonial.name}
-                </span>
-              </div>
-            ))}
+              );
+            })}
           </div>
+
         </div>
       </div>
+
+      {/* Internal Custom Keyframes definition for standalone usage */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes kenburns {
+          0% { transform: scale(1); }
+          100% { transform: scale(1.1); }
+        }
+        @keyframes slideUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}} />
     </section>
   );
 };

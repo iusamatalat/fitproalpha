@@ -1,8 +1,11 @@
 import React from 'react';
-import logoUrl from '../../../assets/logo.svg';
-import { Zap, ArrowRight, MapPin, Phone, Mail } from 'lucide-react';
+// --- Custom Failsafe SVGs ---
+const Facebook = ({ className }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
 
-// --- Custom Social Icons (Lucide V1 replacements) ---
 const Instagram = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
     <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
@@ -16,129 +19,114 @@ const Twitter = ({ className }) => (
     <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
   </svg>
 );
+import logoUrl from '../../../assets/logo.svg';
 
-const Youtube = ({ className }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M2.5 7.1C2.5 7.1 2.3 5.5 3 4.8 3.9 3.9 5 3.9 5.5 3.8 9 3.5 12 3.5 12 3.5s3 0 6.5.3c.5.1 1.6.1 2.5 1 1.1 1.1 1.3 2.8 1.3 2.8.2 1.4.2 2.8.2 2.8s0 1.4-.2 2.8c0 0-.2 1.6-1.3 2.8-.9.9-2.1.9-2.6 1-3.6.3-6.4.3-6.4.3s-3 0-6.5-.3c-.5-.1-1.6-.1-2.5-1-1.1-1.1-1.3-2.8-1.3-2.8-.2-1.4-.2-2.8-.2-2.8s0-1.4.2-2.8Z" />
-    <path d="m9.7 15.6 5.8-3.4-5.8-3.4v6.8Z" />
-  </svg>
-);
-
-const Linkedin = ({ className }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect width="4" height="12" x="2" y="9" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
-
-// --- Main Footer Component ---
 const Footer = () => {
   return (
-    <footer className="bg-[#0a0a0a] text-white relative z-50 overflow-hidden border-t border-white/5 mt-20">
-      {/* Background Enhancements */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-green to-transparent opacity-30"></div>
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[300px] bg-brand-green/5 blur-[120px] pointer-events-none rounded-full"></div>
+    <footer className="bg-[#050505] text-white pt-24 pb-12 font-inter relative z-50 overflow-hidden">
+      
+      {/* Immersive Atmospheric Lighting */}
+      <div className="absolute inset-0 pointer-events-none">
+         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-green to-transparent opacity-20"></div>
+         <div className="absolute -bottom-[20%] right-[-10%] w-[800px] h-[800px] bg-brand-green/10 blur-[200px] mix-blend-screen" />
+         <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-zinc-800/10 blur-[150px] mix-blend-screen" />
+      </div>
 
-      <div className="container mx-auto px-6 max-w-[1240px] pt-24 pb-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-8 mb-20">
-
-          {/* Brand Core Column */}
-          <div className="lg:col-span-5 flex flex-col items-start pr-0 lg:pr-12">
-            <div className="flex items-center gap-4 mb-8">
-              <img src={logoUrl} alt="Fit Pro Alpha Logo" className="w-16 h-16 object-contain brightness-125 saturate-150 drop-shadow-[0_0_15px_rgba(204,255,0,0.2)]" />
-              <div className="flex flex-col">
-                <span className="font-montserrat font-black text-3xl uppercase tracking-tighter leading-none">Fit Pro</span>
-                <span className="font-montserrat font-black text-2xl text-brand-green uppercase tracking-[0.25em] leading-normal pt-1">Alpha</span>
+      <div className="container mx-auto px-6 max-w-[1240px] relative z-20">
+        {/* Main Footer Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 mb-8 border-b border-zinc-900/50 pb-16">
+          
+          {/* Left Column - Brand & CTA */}
+          <div className="lg:col-span-5 flex flex-col items-start pr-0 lg:pr-10">
+            {/* Logo Row */}
+            <div className="flex items-center gap-3 mb-8">
+              <img src={logoUrl} alt="Fit Pro Alpha Logo" className="w-10 h-10 object-contain brightness-125 saturate-150 drop-shadow-[0_0_10px_rgba(204,255,0,0.2)]" />
+              <div className="flex items-baseline gap-1">
+                <span className="font-montserrat font-black text-2xl uppercase tracking-tighter">Fit</span>
+                <span className="font-montserrat font-black text-2xl uppercase tracking-tighter text-brand-green">Pro</span>
+                <span className="font-montserrat font-black text-2xl uppercase tracking-[0.1em] ml-1">Alpha</span>
               </div>
             </div>
-            <p className="font-inter text-zinc-400 leading-relaxed max-w-md mb-10 text-lg">
-              We engineer ruthless, full-funnel scaling systems exclusively for elite fitness influencers. Total market domination.
-            </p>
-            <div className="flex items-center gap-4">
-              {[
-                { Icon: Instagram, href: '#', label: 'Instagram' },
-                { Icon: Twitter, href: '#', label: 'Twitter' },
-                { Icon: Youtube, href: '#', label: 'Youtube' },
-                { Icon: Linkedin, href: '#', label: 'Linkedin' },
-              ].map((social, idx) => (
-                <a key={idx} href={social.href} aria-label={social.label} className="w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center hover:bg-brand-green hover:border-brand-green hover:text-black hover:shadow-[0_0_20px_rgba(204,255,0,0.3)] transition-all duration-300 hover:-translate-y-1">
-                  <social.Icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
-          </div>
 
-          {/* Alpha Insights Opt-in */}
-          <div className="lg:col-span-4 lg:col-start-6">
-            <div className="flex items-center gap-3 mb-8 border-b border-white/10 pb-4 inline-flex">
-              <Zap className="w-5 h-5 text-brand-green" />
-              <h4 className="font-montserrat font-black text-xl uppercase tracking-widest text-white">Alpha Insights</h4>
-            </div>
-            <p className="font-inter text-zinc-400 mb-6 text-sm leading-relaxed">
-              Join over 5,000+ elite fitness coaches receiving our weekly scaling strategies, market analyses, and pure conversion blueprints.
+            {/* Taglines */}
+            <h3 className="font-montserrat font-bold text-lg md:text-xl text-white leading-snug mb-5">
+              Beautifully designed conversion systems, hand-crafted for elite fitness coaches.
+            </h3>
+            <p className="text-zinc-500 text-[13px] mb-8 max-w-sm leading-relaxed">
+              Receive updates, tutorials, discounts and scaling resources sent straight to your inbox every month.
             </p>
-            <form className="flex flex-col gap-3" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white font-inter text-sm outline-none focus:border-brand-green/50 focus:bg-white/10 transition-all placeholder:text-zinc-600"
+
+            {/* Input Row */}
+            <form className="flex w-full max-w-sm h-11 mb-4" onSubmit={(e) => e.preventDefault()}>
+              <input 
+                type="email" 
+                placeholder="Email" 
                 required
+                className="flex-1 bg-white border border-white focus:border-brand-green text-black px-4 font-inter text-sm outline-none placeholder:text-zinc-400 rounded-none w-full shadow-[0_0_15px_rgba(255,255,255,0.05)] transition-all"
               />
-              <button
-                type="submit"
-                className="w-full bg-brand-green hover:bg-[#bbf000] text-black font-montserrat font-bold uppercase tracking-widest text-sm py-3.5 rounded-xl transition-all shadow-[0_0_15px_rgba(204,255,0,0.1)] hover:shadow-[0_0_25px_rgba(204,255,0,0.3)] flex items-center justify-center gap-2 group"
+              <button 
+                type="submit" 
+                className="bg-brand-green hover:bg-[#bbf000] text-black font-black text-xs uppercase tracking-widest px-6 transition-all shadow-[0_0_20px_rgba(204,255,0,0.15)] shrink-0"
               >
-                <span>Subscribe Now</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform stroke-[3]" />
+                Subscribe
               </button>
             </form>
+            <p className="text-zinc-600 text-[10px]">
+              You can unsubscribe at any time.
+            </p>
           </div>
 
-          {/* Contact Details */}
-          <div className="lg:col-span-3">
-            <div className="flex items-center gap-3 mb-8 border-b border-white/10 pb-4 inline-flex">
-              <MapPin className="w-5 h-5 text-brand-green" />
-              <h4 className="font-montserrat font-black text-xl uppercase tracking-widest text-white">Contact</h4>
+          {/* Right Columns - Links */}
+          <div className="lg:col-span-7 flex flex-wrap sm:grid sm:grid-cols-3 gap-10 lg:gap-4 pt-4 lg:pl-10">
+            
+            {/* ECOSYSTEM */}
+            <div>
+              <h4 className="font-bold text-[11px] uppercase tracking-widest text-zinc-300 mb-6 font-montserrat">Ecosystem</h4>
+              <ul className="space-y-4 text-[13px] text-zinc-500 font-medium">
+                <li><a href="/playbook" className="hover:text-brand-green transition-transform transform hover:translate-x-1 block duration-300">The Playbook</a></li>
+                <li><a href="/free-community" className="hover:text-brand-green transition-transform transform hover:translate-x-1 block duration-300">Free Community</a></li>
+                <li><a href="/premium-community" className="hover:text-brand-green transition-transform transform hover:translate-x-1 flex items-center duration-300">Alpha Elite <span className="ml-2 bg-brand-green text-black px-1.5 py-[1px] rounded text-[8px] font-black uppercase tracking-wider inline-block">Pro</span></a></li>
+                <li><a href="/alpha-elite" className="hover:text-brand-green transition-transform transform hover:translate-x-1 block duration-300">Mastermind</a></li>
+                <li><a href="#" className="hover:text-brand-green transition-transform transform hover:translate-x-1 block duration-300">Methodology</a></li>
+              </ul>
             </div>
-            <ul className="space-y-4 font-inter">
-              <li className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-brand-green/30 hover:bg-white/10 transition-all group">
-                <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center group-hover:bg-brand-green transition-colors">
-                  <Phone className="w-4 h-4 text-brand-green group-hover:text-black transition-colors" />
-                </div>
-                <div>
-                  <span className="block text-zinc-500 text-[10px] mb-0.5 uppercase tracking-widest font-black">Call Us Now</span>
-                  <a href="tel:1-888-303-8580" className="hover:text-brand-green transition-colors text-white font-bold block text-lg tracking-tight">+92 3XX XXXXXXX</a>
-                </div>
-              </li>
-              <li className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-brand-green/30 hover:bg-white/10 transition-all group">
-                <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center group-hover:bg-brand-green transition-colors">
-                  <Mail className="w-4 h-4 text-brand-green group-hover:text-black transition-colors" />
-                </div>
-                <div>
-                  <span className="block text-zinc-500 text-[10px] mb-0.5 uppercase tracking-widest font-black">Send A Proposal</span>
-                  <a href="mailto:scale@fitproalpha.com" className="hover:text-brand-green transition-colors text-white font-bold block">scale@fitproalpha.com</a>
-                </div>
-              </li>
-            </ul>
-          </div>
 
+            {/* PLATFORM */}
+            <div>
+              <h4 className="font-bold text-[11px] uppercase tracking-widest text-zinc-300 mb-6 font-montserrat">Platform</h4>
+              <ul className="space-y-4 text-[13px] text-zinc-500 font-medium">
+                <li><a href="#" className="hover:text-brand-green transition-transform transform hover:translate-x-1 flex items-center duration-300">Marketing Vault <span className="ml-2 bg-emerald-500 text-white px-1.5 py-[1px] rounded text-[8px] font-bold uppercase inline-block">New</span></a></li>
+                <li><a href="#" className="hover:text-brand-green transition-transform transform hover:translate-x-1 block duration-300">Brand Assets</a></li>
+                <li><a href="#" className="hover:text-brand-green transition-transform transform hover:translate-x-1 block duration-300">Testimonials</a></li>
+                <li><a href="#" className="hover:text-brand-green transition-transform transform hover:translate-x-1 block duration-300">Video Hub</a></li>
+              </ul>
+            </div>
+
+            {/* COMPANY */}
+            <div>
+              <h4 className="font-bold text-[11px] uppercase tracking-widest text-zinc-300 mb-6 font-montserrat">Company</h4>
+              <ul className="space-y-4 text-[13px] text-zinc-500 font-medium">
+                <li><a href="#" className="hover:text-brand-green transition-transform transform hover:translate-x-1 block duration-300">Success Stories</a></li>
+                <li><a href="#" className="hover:text-brand-green transition-transform transform hover:translate-x-1 block duration-300">Affiliates</a></li>
+                <li><a href="#" className="hover:text-brand-green transition-transform transform hover:translate-x-1 flex items-center duration-300">Changelog <span className="ml-2 bg-amber-500 text-black px-1 py-[1px] rounded text-[8px] font-black uppercase inline-block">Updated</span></a></li>
+                <li><a href="#" className="hover:text-brand-green transition-transform transform hover:translate-x-1 block mt-8 lg:mt-6 duration-300">Contact</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        {/* Minimalist Divider */}
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent mb-8" />
-
-        {/* Bottom Copyright Meta Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="font-inter text-zinc-500 text-sm font-semibold tracking-wide flex items-center gap-2">
-            &copy; {new Date().getFullYear()} Fit Pro Alpha. All rights reserved.
-          </p>
-          <div className="flex items-center gap-8 font-inter text-zinc-500 text-sm font-semibold tracking-wide">
-            <a href="#" className="hover:text-brand-green transition-colors group flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 group-hover:bg-brand-green transition-colors"></span> Privacy Policy
+        {/* Social Icons standalone at the very end */}
+        <div className="flex justify-end pt-2">
+          <div className="flex gap-6 items-center">
+            <span className="font-montserrat font-bold text-[10px] uppercase text-zinc-600 tracking-widest mr-2">Follow</span>
+            <a href="#" className="text-zinc-600 hover:text-brand-green transition-all transform hover:-translate-y-1 block duration-300" aria-label="Twitter">
+              <Twitter className="w-[18px] h-[18px] fill-current stroke-0" />
             </a>
-            <a href="#" className="hover:text-brand-green transition-colors group flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 group-hover:bg-brand-green transition-colors"></span> Terms of Service
+            <a href="#" className="text-zinc-600 hover:text-brand-green transition-all transform hover:-translate-y-1 block duration-300" aria-label="Facebook">
+              <Facebook className="w-[18px] h-[18px] fill-current stroke-0" />
+            </a>
+            <a href="#" className="text-zinc-600 hover:text-brand-green transition-all transform hover:-translate-y-1 block duration-300" aria-label="Instagram">
+              <Instagram className="w-[18px] h-[18px] stroke-2" />
             </a>
           </div>
         </div>

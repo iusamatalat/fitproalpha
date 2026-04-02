@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import wolfCover from '../../../assets/wolf_cover.png';
 
 const OfferingSection = () => {
@@ -43,9 +44,9 @@ const OfferingSection = () => {
               </div>
 
 
-              <button className="mt-auto inline-flex items-center justify-center bg-transparent border-[3px] border-cyan-400 text-cyan-400 font-inter font-black uppercase tracking-widest text-[10px] lg:text-xs px-6 py-3.5 rounded-full hover:bg-cyan-400 hover:text-black transition-colors duration-300 w-full">
+              <Link to="/free-community" className="mt-auto inline-flex items-center justify-center bg-transparent border-[3px] border-cyan-400 text-cyan-400 font-inter font-black uppercase tracking-widest text-[10px] lg:text-xs px-6 py-3.5 rounded-full hover:bg-cyan-400 hover:text-black transition-colors duration-300 w-full">
                 Join For Free
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -74,9 +75,9 @@ const OfferingSection = () => {
 
             
 
-              <button className="mt-auto inline-flex items-center justify-center bg-transparent border-[3px] border-[#9d4edd] text-[#9d4edd] font-inter font-black uppercase tracking-widest text-[10px] lg:text-xs px-6 py-3.5 rounded-full hover:bg-[#9d4edd] hover:text-white transition-colors duration-300 w-full">
+              <Link to="/premium-community" className="mt-auto inline-flex items-center justify-center bg-transparent border-[3px] border-[#9d4edd] text-[#9d4edd] font-inter font-black uppercase tracking-widest text-[10px] lg:text-xs px-6 py-3.5 rounded-full hover:bg-[#9d4edd] hover:text-white transition-colors duration-300 w-full">
                 Join Paid Tier
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -106,9 +107,9 @@ const OfferingSection = () => {
 
               
 
-              <button className="mt-auto inline-flex items-center justify-center bg-transparent border-[3px] border-brand-green text-brand-green font-inter font-black uppercase tracking-widest text-[10px] lg:text-xs px-6 py-3.5 rounded-full hover:bg-brand-green hover:text-black transition-colors duration-300 w-full">
+              <Link to="/alpha-elite" className="mt-auto inline-flex items-center justify-center bg-transparent border-[3px] border-brand-green text-brand-green font-inter font-black uppercase tracking-widest text-[10px] lg:text-xs px-6 py-3.5 rounded-full hover:bg-brand-green hover:text-black transition-colors duration-300 w-full">
                 Apply For Premium
-              </button>
+              </Link>
             </div>
           </div>
 

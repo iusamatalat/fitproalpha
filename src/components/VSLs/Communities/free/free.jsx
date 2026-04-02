@@ -5,15 +5,15 @@ import logoUrl from '../../../../assets/logo.png';
 const FreeVSL = () => {
   return (
     <div className="min-h-screen bg-brand-black text-white font-inter selection:bg-brand-green selection:text-black">
-      
+
       {/* Header/Hero Section */}
       <section className="relative pt-32 pb-20 px-6 md:px-12 flex flex-col items-center justify-center text-center overflow-hidden">
         {/* Subtle background glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[400px] bg-brand-green/10 blur-[120px] rounded-full pointer-events-none z-0" />
-        
+
         <div className="relative z-10 w-full max-w-4xl mx-auto">
           <img src={logoUrl} alt="Fit Pro Alpha Logo" className="h-[60px] md:h-[80px] mx-auto mb-10" style={{ filter: 'brightness(0) saturate(100%) invert(88%) sepia(85%) saturate(3061%) hue-rotate(24deg) brightness(109%) contrast(98%)' }} />
-          
+
           <div className="inline-block bg-zinc-900 border border-zinc-800 px-4 py-1.5 rounded-full mb-6 relative">
             <span className="text-zinc-400 font-medium text-sm md:text-base uppercase tracking-widest relative z-10">
               Exclusive Access
@@ -34,7 +34,7 @@ const FreeVSL = () => {
       {/* Protocols Section (Who it's for / Not for) */}
       <section className="py-20 px-6 md:px-12 bg-zinc-950 border-y border-zinc-900 relative">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
-          
+
           {/* Who it's FOR */}
           <div className="bg-black border border-zinc-800 p-8 md:p-12 shadow-[10px_10px_0px_rgba(187,246,0,0.2)] hover:shadow-[10px_10px_0px_rgba(187,246,0,1)] hover:-translate-y-2 transition-all duration-300 group">
             <h2 className="font-montserrat font-black text-3xl md:text-4xl uppercase mb-10 text-white flex items-center gap-4 border-b border-zinc-800 pb-6 group-hover:border-brand-green/30 transition-colors">
@@ -104,12 +104,12 @@ const FreeVSL = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {[
-              { icon: <Video className="w-8 h-8"/>, title: "Social Media Growth", desc: "How growth works on social media as a health & fitness coach." },
-              { icon: <ArrowRight className="w-8 h-8"/>, title: "$1000 / Month Planner", desc: "How to make $1000 / month as an online health & fitness coach." },
-              { icon: <FileText className="w-8 h-8"/>, title: "2025 Complete Roadmap", desc: "Complete roadmap to start & scale your business to $1000/month consistently." },
-              { icon: <Users className="w-8 h-8"/>, title: "First 5 Clients Strategy", desc: "Gain exclusive access to proven strategies to grab and retain your first 5 clients." },
-              { icon: <CheckCircle2 className="w-8 h-8"/>, title: "Delivering Elite Results", desc: "Learn to deliver results confidently to your clients to retain them every month." },
-              { icon: <Calendar className="w-8 h-8"/>, title: "Weekly Support & Calls", desc: "Weekly 1 live session & team support. Plus a lot of valuable resources!" }
+              { icon: <Video className="w-8 h-8" />, title: "Social Media Growth", desc: "How growth works on social media as a health & fitness coach." },
+              { icon: <ArrowRight className="w-8 h-8" />, title: "$1000 / Month Planner", desc: "How to make $1000 / month as an online health & fitness coach." },
+              { icon: <FileText className="w-8 h-8" />, title: "2025 Complete Roadmap", desc: "Complete roadmap to start & scale your business to $1000/month consistently." },
+              { icon: <Users className="w-8 h-8" />, title: "First 5 Clients Strategy", desc: "Gain exclusive access to proven strategies to grab and retain your first 5 clients." },
+              { icon: <CheckCircle2 className="w-8 h-8" />, title: "Delivering Elite Results", desc: "Learn to deliver results confidently to your clients to retain them every month." },
+              { icon: <Calendar className="w-8 h-8" />, title: "Weekly Support & Calls", desc: "Weekly 1 live session & team support. Plus a lot of valuable resources!" }
             ].map((item, i) => (
               <div key={i} className="bg-zinc-900 border border-zinc-800 p-10 hover:bg-zinc-800 hover:border-brand-green transition-all duration-500 group relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-green/5 rounded-full translate-x-12 -translate-y-12 transition-transform duration-500 group-hover:scale-[2]" />
@@ -128,10 +128,10 @@ const FreeVSL = () => {
       <section className="py-24 px-6 md:px-12 bg-zinc-950 relative overflow-hidden border-t border-zinc-900">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="font-montserrat font-black text-4xl md:text-6xl lg:text-7xl uppercase tracking-tighter mb-10 text-white">
-            Join FPA Free Tribe For <br/>
+            Join FPA Free Tribe For <br />
             <span className="bg-brand-green text-black px-6 py-2 inline-block transform -skew-x-6 mt-6 shadow-[10px_10px_0px_rgba(255,255,255,1)]">ZERO COST</span>
           </h2>
-          
+
           <div className="bg-black border border-zinc-800 p-8 md:p-14 text-left mb-12 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform rotate-1 hover:rotate-0 transition-transform duration-500 relative">
             <h3 className="font-montserrat font-black text-3xl md:text-4xl uppercase mb-6 text-brand-green">⚠️ Important Protocol</h3>
             <p className="text-zinc-300 text-lg md:text-xl md:leading-relaxed mb-10 font-medium border-l-4 border-brand-green pl-6">
@@ -158,7 +158,7 @@ const FreeVSL = () => {
             </div>
           </div>
 
-          <a 
+          <a
             href="https://www.skool.com/fit-pro-alpha-tribe-free-4746"
             target="_blank"
             rel="noopener noreferrer"
@@ -180,7 +180,7 @@ const FreeVSL = () => {
             Accelerate Your Results
           </div>
           <h2 className="font-montserrat font-black text-4xl md:text-5xl lg:text-7xl uppercase tracking-tighter text-white mb-10 leading-[0.9]">
-            Scale To <br className="hidden md:block"/> <span className="text-brand-green drop-shadow-[0_0_20px_rgba(187,246,0,0.3)]">$12,000 / Year Minimum</span>
+            Scale To <br className="hidden md:block" /> <span className="text-brand-green drop-shadow-[0_0_20px_rgba(187,246,0,0.3)]">$12,000 / Year Minimum</span>
           </h2>
           <p className="text-xl md:text-2xl text-zinc-300 font-medium max-w-4xl mx-auto mb-16 leading-relaxed">
             If you want to grow fast, build and scale your business rapidly, join our Premium Community. Here are the results you can expect:
@@ -221,7 +221,7 @@ const FreeVSL = () => {
               <p className="text-zinc-400 font-medium">Choose your ascension path below.</p>
             </div>
             <div className="flex flex-col gap-4 w-full sm:w-auto shrink-0">
-              <a 
+              <a
                 href="https://www.skool.com/fit-pro-alpha-community"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -229,8 +229,8 @@ const FreeVSL = () => {
               >
                 Join Premium Now
               </a>
-              
-              <a 
+
+              <a
                 href="https://calendly.com/fitproalpha/30min"
                 target="_blank"
                 rel="noopener noreferrer"

@@ -132,7 +132,7 @@ const PlatformSection = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-[150%] skew-x-[-45deg] group-hover:animate-[shimmer_1.5s_infinite]"></div>
             <div className="absolute inset-0 bg-white/20 animate-pulse rounded-full blur-xl group-hover:bg-white/40 transition-colors duration-500"></div>
             <span className="relative z-10 flex items-center gap-3 drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">
-              Hit The Damn Button
+              Reserve Your Spot Now
               <ArrowRight className="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-3 transition-transform duration-300" strokeWidth={3} />
             </span>
           </button>

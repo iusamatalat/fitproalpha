@@ -1,30 +1,30 @@
 import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { Plus } from 'lucide-react';
 
 const faqs = [
   {
-    question: "What does a Digital Marketing Agency actually do?",
-    answer: "A digital marketing agency helps you grow your business online by deploying targeted ad campaigns, optimizing your funnels to convert traffic into high-ticket clients, and building backend systems to maximize customer lifetime value. In short: we build the machine that prints money for your coaching business."
+    question: "What does the Fit Pro Alpha system actually do?",
+    answer: "We help you scale your fitness coaching business seamlessly by deploying highly-targeted conversion funnels, VSL mechanics, and back-end automations. We engineer the exact machine you need to consistently print high-ticket clients on autopilot."
   },
   {
-    question: "How do I know that I will get a return on my investment?",
-    answer: "We track every single metric. From cost-per-click, to cost-per-lead, to cost-per-acquisition. You will have a fully transparent dashboard that shows you exactly how much money you put in, and exactly how much revenue comes out. Our entire system is built around strict KPIs and measurable ROI."
+    question: "How do I know I will get a return on my investment?",
+    answer: "We track every single metric ruthlessly. From cost-per-click to total client acquisition cost. Our entire scaling framework is built on strict, transparent KPIs, guaranteeing that you know exactly how your capital is predictably performing."
   },
   {
-    question: "Do you work with big or small companies?",
-    answer: "We work exclusively with elite fitness influencers and scaling coaching businesses that have proven offers and are ready to hyper-scale. If you're just starting out from zero, we might not be the best fit yet. But if you have momentum, we pour gasoline on the fire."
+    question: "Do you only work with massive agencies?",
+    answer: "We work exclusively with elite fitness influencers and scaling coaching businesses that possess proven offers. If you have any foundational momentum, our systems are built precisely to pour pure gasoline on the fire."
   },
   {
-    question: "Why is Fit Pro Alpha the best digital marketing agency?",
-    answer: "Because we actually practice what we preach. We don't just run ads; we engineer ruthless, full-funnel scaling systems. We've generated over $7.8 billion for our clients across the board by focusing purely on metrics that actually matter: booked calls and closed deals."
+    question: "Why is Fit Pro Alpha better than organic outreach?",
+    answer: "Because organic scaling relies on exhausting hustle and the unpredictable whims of social media algorithms. Our paid acquisition methods and automated pipelines buy back your time and create a mathematically predictable stream of inbound booked calls."
   },
   {
-    question: "Can you guarantee results?",
-    answer: "While nobody can guarantee absolute specific numbers because we can't control the market or your sales team's closing rate, we do guarantee the flawless deployment of our proven scaling systems. We don't win unless you win."
+    question: "Can you explicitly guarantee specific revenue results?",
+    answer: "While we cannot legally guarantee specific numeric revenue spikes because we can't control your sales team's closing rates, we absolutely guarantee the flawless deployment of our proven scaling infrastructure to get you in front of qualified buyers."
   },
   {
-    question: "What's involved with digital marketing?",
-    answer: "Everything from aggressive paid user acquisition across Meta, Google, and YouTube, to building high-converting VSL (Video Sales Letter) funnels, setting up automated email nuture sequences, and seamlessly integrating with your backend sales setters."
+    question: "What exactly is involved in your deployment?",
+    answer: "Everything from establishing aggressive paid user acquisition across Meta and YouTube, to systematically building your high-converting Video Sales Letter funnels, and integrating our proprietary AI follow-up nurture sequences natively into your backend."
   }
 ];
 
@@ -36,50 +36,82 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="bg-white py-24 md:py-32 w-full relative z-10">
-      <div className="container mx-auto px-6 max-w-4xl">
+    <section className="relative w-full bg-[#0a0a0a] pt-32 pb-40 border-t border-zinc-900 border-b overflow-hidden">
+      {/* Immersive Atmospheric Background */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none">
+         {/* Cinematic Dark Background Image */}
+         <img 
+           src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=1920&h=1080&fit=crop" 
+           alt="Atmospheric Background" 
+           className="absolute inset-0 w-full h-full object-cover opacity-10 mix-blend-luminosity grayscale-[0.8]"
+         />
+         {/* Ambient Lighting Accents */}
+         <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-brand-green/10 blur-[200px] rounded-full mix-blend-screen" />
+         <div className="absolute bottom-10 right-10 w-[800px] h-[800px] bg-cyan-700/10 blur-[250px] mix-blend-screen" />
+         {/* Deep Gradient Fade-outs for seamless blending */}
+         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]" />
+      </div>
 
-        {/* Headline */}
-        <h2 className="font-montserrat font-black text-[2.5rem] md:text-5xl lg:text-[4rem] text-center text-black uppercase leading-[0.9] tracking-tighter mb-16 flex flex-col items-center">
-          <span>You've Got Questions,</span>
-          <span>We've Got Answers.</span>
-        </h2>
+      <div className="container mx-auto px-6 max-w-[1300px] relative z-10">
+        
+        {/* Split Layout Container */}
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+          
+          {/* LEFT: Fixed Info Panel */}
+          <div className="w-full lg:w-[40%] flex flex-col items-start lg:sticky lg:top-32 self-start pb-10">
+            <h2 className="font-montserrat font-black text-5xl md:text-6xl lg:text-7xl text-white uppercase tracking-tighter leading-[1.0] mb-8">
+              FREQUENTLY<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-green to-lime-300">ASKED</span><br />
+              QUESTIONS.
+            </h2>
+            <p className="font-inter text-zinc-400 text-lg md:text-xl font-medium mb-12 max-w-sm">
+              Everything you need to know about our scaling systems, our guarantees, and our exact aggressive methodologies.
+            </p>
+            <button className="bg-transparent border-[3px] border-[#333] hover:border-brand-green text-zinc-300 hover:text-brand-green font-montserrat font-bold uppercase tracking-widest text-[10px] md:text-xs px-8 py-5 rounded-full transition-all duration-300">
+              Still Have Questions?
+            </button>
+          </div>
 
-        {/* Accordion Container */}
-        <div className="flex flex-col gap-[3px]">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-[#f2f2f2] hover:bg-[#e8e8e8] transition-colors duration-200"
-            >
-              <button
-                onClick={() => toggleFaq(index)}
-                className="w-full text-left py-5 px-6 md:px-8 flex justify-between items-center focus:outline-none group cursor-pointer"
-              >
-                {/* FIX APPLIED HERE: 
-                  Removed mix-blend-difference so the text actually shows up.
-                  Changed text-black to text-zinc-900 for a slightly softer, more professional look. 
-                */}
-                <span className={`font-inter font-bold text-[15px] md:text-base leading-snug pr-4 transition-colors duration-300 ${openIndex === index ? 'text-brand-green' : 'text-zinc-900 group-hover:text-brand-green'}`}>
-                  {faq.question}
-                </span>
-                <ChevronDown
-                  className={`w-5 h-5 transition-transform duration-300 shrink-0 ${openIndex === index ? 'rotate-180 text-brand-green' : 'text-zinc-400 group-hover:text-zinc-600'}`}
-                />
-              </button>
+          {/* RIGHT: High-End Accordion List */}
+          <div className="w-full lg:w-[60%] flex flex-col border-t-2 border-zinc-900">
+            {faqs.map((faq, index) => {
+              const isOpen = openIndex === index;
+              return (
+                <div 
+                  key={index}
+                  className="group border-b-2 border-zinc-900 overflow-hidden"
+                >
+                  {/* Question Row */}
+                  <button
+                    onClick={() => toggleFaq(index)}
+                    className="w-full py-8 md:py-10 flex justify-between items-center text-left focus:outline-none cursor-pointer"
+                  >
+                    <h3 className={`font-inter font-black text-xl md:text-3xl tracking-tight transition-colors duration-400 pr-8 ${isOpen ? 'text-brand-green' : 'text-zinc-200 group-hover:text-white'}`}>
+                      {faq.question}
+                    </h3>
 
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-                  }`}
-              >
-                <div className="px-6 md:px-8 pb-6 pt-1 font-inter text-zinc-600 text-sm md:text-[15px] font-medium leading-relaxed">
-                  {faq.answer}
+                    {/* Animated Plus/Cross Icon */}
+                    <div className={`shrink-0 w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center border-[3px] transition-all duration-500 will-change-transform ${isOpen ? 'border-brand-green bg-brand-green/10 rotate-[135deg] shadow-[0_0_20px_rgba(204,255,0,0.2)]' : 'border-zinc-800 group-hover:border-zinc-600 group-hover:bg-zinc-800'}`}>
+                      <Plus className={`w-5 h-5 md:w-7 md:h-7 transition-colors duration-400 ${isOpen ? 'text-brand-green' : 'text-zinc-500 group-hover:text-zinc-300'}`} strokeWidth={3} />
+                    </div>
+                  </button>
+
+                  {/* Answer Content using CSS Grid for butter-smooth automatic height transition */}
+                  <div 
+                    className={`grid transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? 'grid-rows-[1fr] opacity-100 pb-10' : 'grid-rows-[0fr] opacity-0 pb-0'}`}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="font-inter text-zinc-400 text-lg md:text-xl font-medium leading-relaxed max-w-2xl pr-8 md:pr-16">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              )
+            })}
+          </div>
 
+        </div>
       </div>
     </section>
   );
