@@ -123,45 +123,59 @@ const TestimonialsSection = () => {
             </div>
           </div>
 
-          {/* Playlist Roster (Right Side) */}
-          <div className="xl:col-span-4 flex flex-col h-full space-y-3 md:space-y-4 overflow-y-auto max-h-[600px] xl:max-h-[700px] pr-2 xl:pr-4 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-zinc-800 [&::-webkit-scrollbar-thumb]:rounded-full">
-            {testimonials.map((test, index) => {
-              const isActive = index === activeIndex;
-              return (
-                <div 
-                  key={test.id}
-                  onClick={() => setActiveIndex(index)}
-                  className={`flex items-stretch md:items-center gap-4 p-3 md:p-4 rounded-2xl cursor-pointer transition-all duration-300 group ${
-                    isActive 
-                      ? 'bg-zinc-800/80 border-l-[6px] border-brand-green shadow-lg scale-[1.02]' 
-                      : 'bg-[#1a1a1a] border-l-[6px] border-transparent hover:bg-zinc-800/50 hover:border-zinc-600'
-                  }`}
-                >
-                  {/* Thumbnail */}
-                  <div className="relative w-24 h-28 md:w-36 md:h-24 shrink-0 rounded-xl overflow-hidden border-2 border-zinc-700 group-hover:border-brand-green/50 transition-colors">
-                    <img src={test.image} alt={test.name} className={`w-full h-full object-cover transition-transform duration-700 ${isActive ? 'scale-110' : 'grayscale-[0.5] group-hover:grayscale-0 group-hover:scale-105'}`} />
-                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                      <Play className={`w-5 h-5 md:w-6 md:h-6 ml-1 transition-colors ${isActive ? 'text-brand-green fill-brand-green' : 'text-white/80 fill-white/80 group-hover:text-white'}`} />
-                    </div>
-                  </div>
+          {/* Playlist Roster (Right Side) - AUTOSCROLLING LOOP */}
+          <div className="xl:col-span-4 relative overflow-hidden h-[600px] xl:h-[700px] rounded-2xl group/marquee pr-2 xl:pr-4 mt-8 xl:mt-0">
+            
+            {/* Top/Bottom Gradient Masks to safely blur the scrolling elements into the background */}
+            <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-[#111] to-transparent z-20 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-[#111] to-transparent z-20 pointer-events-none" />
 
-                  {/* Thumbnail Info */}
-                  <div className="flex-1 flex flex-col justify-center py-1">
-                    <h4 className={`font-montserrat font-black text-xs md:text-sm uppercase tracking-wider mb-1 ${isActive ? 'text-brand-green' : 'text-zinc-200 group-hover:text-white'}`}>
-                      {test.name}
-                    </h4>
-                    <p className="font-inter text-zinc-500 text-[10px] md:text-xs font-medium line-clamp-3 leading-snug">
-                      {test.quote}
-                    </p>
-                  </div>
+            {/* Exactly Matches SuccessStories Logic */}
+            <div className="animate-marquee-vertical group-hover/marquee:[animation-play-state:paused] w-full pt-4">
+              
+              {/* Render 2 identical blocks to create the seamless mathematical loop offset matching -50% translateY */}
+              {[0, 1].map((blockIndex) => (
+                <div key={blockIndex} className="flex flex-col gap-3 md:gap-4 mb-3 md:gap-4 w-full">
+                  {testimonials.map((test, index) => {
+                    const isActive = index === activeIndex;
+                    return (
+                      <div 
+                        key={`${blockIndex}-${test.id}`}
+                        onClick={() => setActiveIndex(index)}
+                        className={`flex items-stretch md:items-center gap-4 p-3 md:p-4 rounded-2xl cursor-pointer transition-all duration-300 group ${
+                          isActive 
+                            ? 'bg-zinc-800/80 border-l-[6px] border-brand-green shadow-lg scale-[1.02] z-10 relative' 
+                            : 'bg-[#1a1a1a] border-l-[6px] border-transparent hover:bg-zinc-800/50 hover:border-zinc-600'
+                        }`}
+                      >
+                        {/* Thumbnail */}
+                        <div className="relative w-24 h-28 md:w-36 md:h-24 shrink-0 rounded-xl overflow-hidden border-2 border-zinc-700 group-hover:border-brand-green/50 transition-colors">
+                          <img src={test.image} alt={test.name} className={`w-full h-full object-cover transition-transform duration-700 ${isActive ? 'scale-110' : 'grayscale-[0.5] group-hover:grayscale-0 group-hover:scale-105'}`} />
+                          <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <Play className={`w-5 h-5 md:w-6 md:h-6 ml-1 transition-colors ${isActive ? 'text-brand-green fill-brand-green' : 'text-white/80 fill-white/80 group-hover:text-white'}`} />
+                          </div>
+                        </div>
 
-                  {/* Action Icon */}
-                  <div className="shrink-0 pl-1 md:pl-2 flex items-center justify-center">
-                    <ChevronRight className={`w-5 h-5 transition-transform duration-300 ${isActive ? 'text-brand-green translate-x-1' : 'text-zinc-600 group-hover:text-zinc-400 group-hover:translate-x-1'}`} />
-                  </div>
+                        {/* Thumbnail Info */}
+                        <div className="flex-1 flex flex-col justify-center py-1">
+                          <h4 className={`font-montserrat font-black text-xs md:text-sm uppercase tracking-wider mb-1 ${isActive ? 'text-brand-green' : 'text-zinc-200 group-hover:text-white'}`}>
+                            {test.name}
+                          </h4>
+                          <p className="font-inter text-zinc-500 text-[10px] md:text-xs font-medium line-clamp-3 leading-snug">
+                            {test.quote}
+                          </p>
+                        </div>
+
+                        {/* Action Icon */}
+                        <div className="shrink-0 pl-1 md:pl-2 flex items-center justify-center">
+                          <ChevronRight className={`w-5 h-5 transition-transform duration-300 ${isActive ? 'text-brand-green translate-x-1' : 'text-zinc-600 group-hover:text-zinc-400 group-hover:translate-x-1'}`} />
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
 
         </div>

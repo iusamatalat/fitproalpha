@@ -12,16 +12,27 @@ const stories = [
 
 const SuccessStories = () => {
   return (
-    <section className="bg-brand-black pb-24 overflow-hidden relative">
-      <div className="container mx-auto px-6 mb-12 pt-16">
-        <h2 className="font-montserrat font-black text-4xl md:text-5xl lg:text-6xl text-center text-white uppercase leading-[1.05] tracking-tight flex flex-col items-center">
+    <section className="bg-brand-black pb-24 relative">
+      
+      {/* Master Lively Ambient Background Effect (Spanning into borders) */}
+      <div className="absolute inset-x-0 -top-[250px] -bottom-[250px] z-0 pointer-events-none">
+        {/* Subtle Tech Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_100%_100%_at_50%_50%,#000_30%,transparent_80%)]"></div>
+        {/* Breathing Orbs */}
+        <div className="absolute top-[0%] left-[-10%] w-[50vw] h-[50vw] bg-brand-green/10 blur-[150px] rounded-full mix-blend-screen animate-[pulse_8s_ease-in-out_infinite_alternate]" />
+        <div className="absolute bottom-[0%] right-[-10%] w-[60vw] h-[60vw] bg-zinc-800/80 blur-[180px] rounded-full mix-blend-screen animate-[pulse_12s_ease-in-out_infinite_alternate-reverse]" />
+        <div className="absolute top-[30%] left-[30%] w-[40vw] h-[40vw] bg-brand-green/5 blur-[120px] rounded-full mix-blend-screen animate-[pulse_10s_ease-in-out_infinite_alternate]" />
+      </div>
+
+      <div className="container mx-auto px-6 mb-12 pt-16 relative z-10">
+        <h2 className="font-montserrat font-black text-4xl md:text-5xl lg:text-6xl text-center text-white uppercase leading-[1.05] tracking-tight flex flex-col items-center drop-shadow-[0_0_25px_rgba(187,246,0,0.1)] hover:drop-shadow-[0_0_40px_rgba(187,246,0,0.3)] transition-all duration-700">
           <span>Become Our Next</span>
           <span>Success Story</span>
         </h2>
       </div>
 
       {/* Marquee Container */}
-      <div className="relative flex overflow-x-hidden group mb-20 pointer-events-auto">
+      <div className="relative flex overflow-x-hidden group mb-20 pointer-events-auto z-10">
         {/* Left/Right Fade overlay for generic marquee style */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-[5%] bg-gradient-to-r from-brand-black to-transparent z-20"></div>
         <div className="pointer-events-none absolute inset-y-0 right-0 w-[5%] bg-gradient-to-l from-brand-black to-transparent z-20"></div>

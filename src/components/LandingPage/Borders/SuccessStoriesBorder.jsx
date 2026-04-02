@@ -2,12 +2,13 @@ import React from 'react';
 
 const SuccessStoriesBorder = () => {
   return (
-    <div className="relative w-full overflow-hidden leading-none z-40 pointer-events-none -mt-1 bg-[#0d0d0d]">
+    <div className="relative w-full overflow-hidden leading-none z-40 pointer-events-none -mt-1 bg-transparent">
+
       <svg
         viewBox="0 0 1440 180"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-auto min-h-[80px] md:min-h-[140px] lg:min-h-[180px] block"
+        className="relative z-10 w-full h-auto min-h-[80px] md:min-h-[140px] lg:min-h-[180px] block"
         preserveAspectRatio="none"
       >
         {/* Base slant separating white (top) and dark (bottom) */}

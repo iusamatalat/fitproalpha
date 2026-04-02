@@ -4,8 +4,22 @@ import wolfCover from '../../../assets/wolf_cover.png';
 
 const OfferingSection = () => {
   return (
-    <section className="relative w-full bg-[#242424] pt-4 pb-32 z-10">
-      <div className="container mx-auto px-6 max-w-[1240px]">
+    <section className="relative w-full bg-[#1a1a1a] pt-4 pb-32 z-10 overflow-hidden">
+      
+      {/* Lively Cinematic Background Photo */}
+      <div className="absolute inset-x-0 -top-[10%] -bottom-[10%] z-0 pointer-events-none">
+         {/* Using an intense dark crossfit gym background */}
+         <img 
+           src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2000&auto=format&fit=crop" 
+           alt="Alpha Gym Background" 
+           className="w-full h-full object-cover opacity-40 grayscale mix-blend-overlay animate-[kenburns_30s_infinite_alternate]"
+         />
+         {/* Vignette mask to fade out edges mathematically preventing sharp cutoffs */}
+         <div className="absolute inset-0 bg-gradient-to-b from-[#242424] via-[#242424]/80 to-[#111111]" />
+         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#242424_100%)] opacity-80" />
+      </div>
+
+      <div className="container mx-auto px-6 max-w-[1240px] relative z-10">
 
         {/* Section Header */}
         <div className="w-full flex justify-center items-center gap-4 md:gap-6 mb-16 md:mb-24 mt-8">

@@ -2,16 +2,16 @@ import React from 'react';
 
 const PlatformBorder = () => {
   return (
-    <div className="relative w-full overflow-hidden leading-none z-40 pointer-events-none -mt-1 bg-[#f4f6ef]">
+    <div className="relative w-full overflow-hidden leading-none z-40 pointer-events-none -mt-1 bg-transparent">
       <svg
         viewBox="0 0 1440 180"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-auto min-h-[80px] md:min-h-[140px] lg:min-h-[180px] block"
+        className="relative z-10 w-full h-auto min-h-[80px] md:min-h-[140px] lg:min-h-[180px] block"
         preserveAspectRatio="none"
       >
-        {/* Fill from top with black, angled down to right */}
-        <polygon points="0,0 1440,0 1440,50 0,150" fill="#0d0d0d" />
+        {/* Fill from bottom with white to create the slant, leaving top transparent to reveal grid */}
+        <polygon points="0,150 1440,50 1440,200 0,200" fill="#f4f6ef" />
         
         {/* Pale green floating in top-left dark region */}
         <polygon points="100,20 420,-2 420,33 100,55" fill="#ccff00" opacity="0.15" />
