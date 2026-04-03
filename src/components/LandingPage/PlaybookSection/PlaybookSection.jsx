@@ -1,6 +1,7 @@
 import React from 'react';
 import { Download, CheckCircle, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logoUrl from '../../../assets/logo.svg';
 
 const PlaybookSection = () => {
   return (
@@ -32,19 +33,18 @@ const PlaybookSection = () => {
                 {/* Book Cover Design */}
                 <div className="absolute inset-0 p-8 flex flex-col justify-between overflow-hidden rounded-r-2xl border-2 border-zinc-800">
                    <div className="flex justify-between items-start">
-                     <span className="font-montserrat font-black text-brand-green tracking-[0.3em] text-xs">CONFIDENTIAL</span>
-                     <Zap className="text-brand-green w-6 h-6 animate-pulse" />
+                     <img src={logoUrl} alt="logo" className='text-brand-green w-10 h-10 animate-pulse'/>
                    </div>
                    
                    <div className="z-10 relative">
                      <h3 className="font-montserrat font-black text-[3.5rem] lg:text-6xl text-white uppercase leading-[0.85] tracking-tighter mb-4 group-hover:scale-105 transition-transform duration-500 origin-left">
-                       Alpha<br/>Scale<br/>Systems
+                       The Ultimate<br/>Content<br/>Playbook
                      </h3>
                      <div className="w-16 h-2 bg-brand-green mb-4" />
                      <p className="font-inter text-zinc-400 text-sm font-medium">Volume I: The 7-Figure Blueprint</p>
                    </div>
 
-                   <p className="font-inter font-black text-zinc-600 text-xs tracking-widest uppercase">Fit Pro Alpha Agency</p>
+                   <p className="font-inter font-black text-zinc-600 text-xs tracking-widest uppercase">Fit Pro Alpha</p>
 
                    {/* Neon geometric overlay rings inside the book */}
                    <div className="absolute -right-16 -top-16 w-56 h-56 border-[8px] border-brand-green/20 rounded-full group-hover:scale-150 transition-transform duration-700 pointer-events-none" />
@@ -86,7 +86,7 @@ const PlaybookSection = () => {
                
                {/* Direct Redirect React Router Link */}
                <Link to="/playbook" className="w-full group relative inline-flex items-center justify-center gap-3 bg-brand-green text-black font-montserrat font-black uppercase tracking-widest text-lg md:text-xl px-8 py-6 rounded-xl border-4 border-[#111] transition-all duration-200 hover:-translate-y-1 hover:shadow-[8px_8px_0px_#111] active:translate-y-1 active:shadow-none shadow-[4px_4px_0px_#111]">
-                  Get Free Playbook
+                  Grab Yours Now
                   <Download className="w-6 h-6 group-hover:translate-y-1 transition-transform stroke-[3]" />
                </Link>
              </div>

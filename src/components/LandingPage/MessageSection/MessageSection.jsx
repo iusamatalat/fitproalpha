@@ -95,14 +95,12 @@ const MessageSection = () => {
                      <h3 className="text-white font-montserrat font-black text-2xl md:text-3xl uppercase tracking-widest relative z-10">
                        Name
                      </h3>
-                     <p className="text-brand-green font-inter font-black tracking-widest text-xs md:text-sm mt-1 uppercase relative z-10">
-                       Founder & Master Strategist
-                     </p>
+                     
                      
                      <div className="h-px w-16 bg-zinc-800 my-4 relative z-10" />
                      
                      <p className="text-zinc-400 font-inter text-sm md:text-base leading-relaxed hidden sm:block relative z-10">
-                       Line from Founder
+                       Small message
                      </p>
                    </div>
                  </div>
