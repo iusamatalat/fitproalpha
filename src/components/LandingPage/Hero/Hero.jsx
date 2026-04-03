@@ -16,10 +16,10 @@ const Hero = () => {
         <source src={bgVideo} type="video/mp4" />
       </video>
 
-      {/* Black Overlays */}
-      <div className="absolute inset-0 bg-black/80 z-0 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.2)_0%,rgba(0,0,0,0.95)_100%)] z-0 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(187,246,0,0.08)_0%,transparent_50%)] pointer-events-none z-0" />
+      {/* Black Overlays (Lightened to make video more prominent) */}
+      <div className="absolute inset-0 bg-black/50 z-0 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.1)_0%,rgba(0,0,0,0.85)_100%)] z-0 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(187,246,0,0.1)_0%,transparent_50%)] pointer-events-none z-0" />
 
       {/* Primary Flex Container structured securely to exactly 100vh to ensure perfect user entrance visibility bounds */}
       <div className="relative z-10 container mx-auto px-6 md:px-12 flex flex-col items-center justify-center min-h-screen pt-24 pb-12 w-full max-w-5xl">
@@ -35,25 +35,16 @@ const Hero = () => {
         </p>
 
         {/* Email Capture & CTA */}
-        <div className="w-full max-w-[45rem] mx-auto mb-4">
-          <form className="relative flex flex-row items-stretch w-full bg-[#efefef] rounded-full shadow-2xl overflow-hidden h-12 md:h-14 mt-6">
-            <div className="flex-1 flex items-center px-4 md:px-6 h-full">
-              <span className="text-base md:text-xl mr-2 md:mr-3">👋</span>
-              <input
-                type="email"
-                placeholder="Enter your email here and we'll send you some 'magic'..."
-                className="w-full bg-transparent text-zinc-800 font-inter placeholder-zinc-600 focus:outline-none text-sm md:text-lg outline-none h-full truncate"
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              className="group relative inline-flex items-center justify-center gap-1 md:gap-2 bg-brand-green text-black font-inter font-black tracking-tight text-base md:text-xl px-6 md:px-8 h-full transition-colors duration-300 hover:brightness-95 shrink-0"
-            >
-              Do it
-              <ArrowRight className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300 group-hover:translate-x-1 stroke-[2.5]" />
-            </button>
-          </form>
+        {/* Email Capture CTA (Complete Button) */}
+        {/* Hero CTA Button */}
+        <div className="w-full max-w-3xl mx-auto mb-8 mt-6">
+          <button className="group relative inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-brand-green text-black font-inter font-black uppercase tracking-widest text-sm md:text-lg lg:text-xl px-10 md:px-16 py-4 md:py-6 rounded-full shadow-[0_10px_40px_rgba(187,246,0,0.35)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_50px_rgba(187,246,0,0.55)] active:scale-[0.97] overflow-hidden">
+            <span className="relative z-10 flex items-center gap-3">
+              Book Your Free Strategy Call Now
+              <ArrowRight className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300 group-hover:translate-x-1.5 stroke-[3]" />
+            </span>
+            <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300 ease-out z-0 pointer-events-none" />
+          </button>
         </div>
 
         {/* Trust Indicators underneath */}
