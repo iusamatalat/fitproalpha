@@ -59,7 +59,7 @@ const Navbar = () => {
         <img
           src={logoUrl}
           alt="Fit Pro Alpha Logo"
-          className="h-[40px] sm:h-[50px] md:h-[60px] shrink-0 transition-transform duration-500 group-hover:scale-105"
+          className="h-[28px] sm:h-[44px] md:h-[60px] shrink-0 transition-transform duration-500 group-hover:scale-105"
           style={{ filter: 'brightness(0) saturate(100%) invert(88%) sepia(85%) saturate(3061%) hue-rotate(24deg) brightness(109%) contrast(98%)' }}
         />
       </Link>

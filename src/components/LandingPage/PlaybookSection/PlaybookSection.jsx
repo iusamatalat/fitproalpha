@@ -37,7 +37,7 @@ const PlaybookSection = () => {
                    </div>
                    
                    <div className="z-10 relative">
-                     <h3 className="font-montserrat font-black text-[3.5rem] lg:text-6xl text-white uppercase leading-[0.85] tracking-tighter mb-4 group-hover:scale-105 transition-transform duration-500 origin-left">
+                     <h3 className="font-montserrat font-black text-[2.5rem] min-[400px]:text-5xl md:text-[3.5rem] lg:text-6xl text-white uppercase leading-[0.9] tracking-tighter mb-4 group-hover:scale-105 transition-transform duration-500 origin-left break-words">
                        The Ultimate<br/>Content<br/>Playbook
                      </h3>
                      <div className="w-16 h-2 bg-brand-green mb-4" />

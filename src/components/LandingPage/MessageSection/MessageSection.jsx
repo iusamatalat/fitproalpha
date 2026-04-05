@@ -1,10 +1,49 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import SkewedVideo from './SkewedVideo';
 import founderImg from '../../../assets/founder.png';
 import gymBg from '../../../assets/gym_bg.png';
 
 const MessageSection = () => {
+  const roles = ["Founder of Fit Pro Alpha", "Fitness Business Coach"];
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const typingSpeed = 50;
+    const deletingSpeed = 30;
+    const delayBeforeDelete = 2500;
+    const delayBeforeType = 500;
+
+    const currentFullText = roles[currentRoleIndex];
+    let timer;
+
+    if (isDeleting) {
+      if (currentText === "") {
+        setIsDeleting(false);
+        setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+        timer = setTimeout(() => { }, delayBeforeType);
+      } else {
+        timer = setTimeout(() => {
+          setCurrentText(currentText.substring(0, currentText.length - 1));
+        }, deletingSpeed);
+      }
+    } else {
+      if (currentText === currentFullText) {
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, delayBeforeDelete);
+      } else {
+        timer = setTimeout(() => {
+          setCurrentText(currentFullText.substring(0, currentText.length + 1));
+        }, typingSpeed);
+      }
+    }
+
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, currentRoleIndex]);
+
   return (
     <section className="relative w-full flex flex-col z-30">
 
@@ -80,11 +119,14 @@ const MessageSection = () => {
               <div className="absolute inset-0 translate-x-4 translate-y-4 lg:translate-x-8 lg:translate-y-8 bg-brand-green shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-2 border-black overflow-hidden z-0" />
 
               {/* Image Container */}
-              <div className="relative bg-zinc-900 overflow-hidden border-2 border-black z-10 w-full h-[500px] md:h-[650px] lg:h-[700px]">
+              <div className="relative bg-[#0a0a0a] overflow-hidden border-2 border-black z-10 w-full h-[500px] md:h-[650px] lg:h-[700px]">
+                {/* Circular green gradient glow behind image */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] sm:w-[60%] aspect-square bg-brand-green/30 blur-[80px] md:blur-[120px] rounded-full z-0 pointer-events-none" />
+                
                 <img
                   src={founderImg}
                   alt="Founder of Fit Pro Alpha"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center p-3 sm:p-5 relative z-10"
                 />
 
                 {/* Bottom Graphic Info Box Overlay */}
@@ -97,10 +139,11 @@ const MessageSection = () => {
                     </h3>
 
 
-                    <div className="h-px w-16 bg-zinc-800 my-4 relative z-10" />
+                    <div className="h-px w-full max-w-[120px] bg-gradient-to-r from-brand-green to-transparent opacity-30 my-4 relative z-10" />
 
-                    <p className="text-zinc-400 font-inter text-sm md:text-base leading-relaxed hidden sm:block relative z-10">
-                      Fitness Business Coach | Founder of Fit Pro Alpha
+                    <p className="inline-flex items-center justify-start whitespace-nowrap bg-brand-green/10 border border-brand-green/20 text-brand-green/90 font-inter font-medium text-[9px] min-[375px]:text-[10px] sm:text-xs md:text-sm px-3 md:px-4 py-2 md:py-2.5 rounded shadow-[inset_0_1px_8px_rgba(0,0,0,0.3)] relative z-10 mt-1 uppercase tracking-wide min-w-[170px] min-[375px]:min-w-[190px] sm:min-w-[210px] md:min-w-[260px] h-[30px] min-[375px]:h-[32px] sm:h-[36px] md:h-[42px]">
+                      {currentText}
+                      <span className="inline-block w-[3px] h-[1em] bg-brand-green ml-1.5 opacity-80 animate-pulse" />
                     </p>
                   </div>
                 </div>

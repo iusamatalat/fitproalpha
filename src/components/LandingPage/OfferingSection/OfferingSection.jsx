@@ -5,30 +5,30 @@ import wolfCover from '../../../assets/wolf_cover.png';
 const OfferingSection = () => {
   return (
     <section className="relative w-full bg-[#1a1a1a] pt-4 pb-32 z-10 overflow-hidden">
-      
+
       {/* Lively Cinematic Background Photo */}
       <div className="absolute inset-x-0 -top-[10%] -bottom-[10%] z-0 pointer-events-none">
-         {/* Using an intense dark crossfit gym background */}
-         <img 
-           src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2000&auto=format&fit=crop" 
-           alt="Alpha Gym Background" 
-           className="w-full h-full object-cover opacity-40 grayscale mix-blend-overlay animate-[kenburns_30s_infinite_alternate]"
-         />
-         {/* Vignette mask to fade out edges mathematically preventing sharp cutoffs */}
-         <div className="absolute inset-0 bg-gradient-to-b from-[#242424] via-[#242424]/80 to-[#111111]" />
-         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#242424_100%)] opacity-80" />
+        {/* Using an intense dark crossfit gym background */}
+        <img
+          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2000&auto=format&fit=crop"
+          alt="Alpha Gym Background"
+          className="w-full h-full object-cover opacity-40 grayscale mix-blend-overlay animate-[kenburns_30s_infinite_alternate]"
+        />
+        {/* Vignette mask to fade out edges mathematically preventing sharp cutoffs */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#242424] via-[#242424]/80 to-[#111111]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#242424_100%)] opacity-80" />
       </div>
 
       <div className="container mx-auto px-6 max-w-[1240px] relative z-10">
 
         {/* Section Header */}
         <div className="w-full flex justify-center items-center gap-4 md:gap-6 mb-16 md:mb-24 mt-8">
-           <span className="text-white font-montserrat font-black uppercase tracking-[0.25em] text-2xl md:text-3xl lg:text-5xl">
-             OUR
-           </span>
-           <span className="bg-brand-green text-black font-montserrat font-black uppercase tracking-[0.25em] text-2xl md:text-3xl lg:text-5xl px-4 md:px-6 py-2 md:py-3 shadow-lg">
-             OFFERING
-           </span>
+          <span className="text-white font-montserrat font-black uppercase tracking-[0.25em] text-2xl md:text-3xl lg:text-5xl">
+            OUR
+          </span>
+          <span className="bg-brand-green text-black font-montserrat font-black uppercase tracking-[0.25em] text-2xl md:text-3xl lg:text-5xl px-4 md:px-6 py-2 md:py-3 shadow-lg">
+            OFFERING
+          </span>
         </div>
 
         {/* Offerings Grid */}
@@ -50,14 +50,14 @@ const OfferingSection = () => {
               </p>
 
               <div className="min-h-[110px] md:min-h-[130px] lg:min-h-[160px] flex items-center justify-center mb-4 md:mb-6">
-                <h4 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-[2.6rem] xl:text-[3rem] tracking-tight sm:tracking-tighter uppercase text-white drop-shadow-md leading-[1.1] lg:leading-[1.05]">
-                  <span className="block">Fit Pro</span>
-                  <span className="block">Alpha</span>
+                <h4 className="font-anton font-normal text-6xl sm:text-7xl lg:text-[5rem] xl:text-[6rem] uppercase text-white drop-shadow-md leading-[1] transform scale-y-110">
                   <span className="block">Tribe</span>
                 </h4>
               </div>
 
-
+              <p className="text-gray-300 text-[13px] font-inter text-center mb-8 leading-[1.6]">
+                Access foundational resources and network with driven fitness professionals.
+              </p>
               <Link to="/free-community" className="mt-auto inline-flex items-center justify-center bg-transparent border-[3px] border-cyan-400 text-cyan-400 font-inter font-black uppercase tracking-widest text-[10px] lg:text-xs px-6 py-3.5 rounded-full hover:bg-cyan-400 hover:text-black transition-colors duration-300 w-full">
                 Join For Free
               </Link>
@@ -80,15 +80,14 @@ const OfferingSection = () => {
               </p>
 
               <div className="min-h-[110px] md:min-h-[130px] lg:min-h-[160px] flex items-center justify-center mb-4 md:mb-6">
-                <h4 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-[2.6rem] xl:text-[3rem] tracking-tight sm:tracking-tighter uppercase text-white drop-shadow-md leading-[1.1] lg:leading-[1.05]">
-                  <span className="block">Fit Pro</span>
+                <h4 className="font-anton font-normal text-6xl sm:text-7xl lg:text-[4.5rem] xl:text-[5rem] uppercase text-white drop-shadow-md leading-[1] transform scale-y-110">
                   <span className="block">Limitless</span>
-                  <span className="block">Alpha</span>
                 </h4>
               </div>
 
-            
-
+              <p className="text-gray-300 text-[13px] font-inter text-center mb-8 leading-[1.6]">
+                Unlock proven systems to streamline your business and shatter revenue ceilings.
+              </p>
               <Link to="/premium-community" className="mt-auto inline-flex items-center justify-center bg-transparent border-[3px] border-[#9d4edd] text-[#9d4edd] font-inter font-black uppercase tracking-widest text-[10px] lg:text-xs px-6 py-3.5 rounded-full hover:bg-[#9d4edd] hover:text-white transition-colors duration-300 w-full">
                 Join Paid Tier
               </Link>
@@ -111,16 +110,14 @@ const OfferingSection = () => {
               </p>
 
               <div className="min-h-[110px] md:min-h-[130px] lg:min-h-[160px] flex items-center justify-center mb-4 md:mb-6">
-                <h4 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-[2.6rem] xl:text-[3rem] tracking-tight sm:tracking-tighter uppercase text-white drop-shadow-md leading-[1.1] lg:leading-[1.05]">
-                  <span className="block">Fit Pro</span>
-                  <span className="block">Alpha</span>
+                <h4 className="font-anton font-normal text-6xl sm:text-7xl lg:text-[5rem] xl:text-[5.5rem] uppercase text-white drop-shadow-md leading-[1] transform scale-y-110">
                   <span className="block">Premium</span>
-                  <span className="block">Community</span>
-                  </h4>
+                </h4>
               </div>
 
-              
-
+              <p className="text-gray-300 text-[13px] font-inter text-center mb-8 leading-[1.6]">
+                Done-for-you scaling services with guaranteed results for seven-figure growth.
+              </p>
               <Link to="/alpha-elite" className="mt-auto inline-flex items-center justify-center bg-transparent border-[3px] border-brand-green text-brand-green font-inter font-black uppercase tracking-widest text-[10px] lg:text-xs px-6 py-3.5 rounded-full hover:bg-brand-green hover:text-black transition-colors duration-300 w-full">
                 Apply For Premium
               </Link>
