@@ -126,7 +126,7 @@ const MessageSection = () => {
                 <img
                   src={founderImg}
                   alt="Founder of Fit Pro Alpha"
-                  className="w-full h-full object-cover object-center p-3 sm:p-5 relative z-10"
+                  className="w-full h-full object-cover object-center pt-3 sm:pt-5 relative z-10"
                 />
 
                 {/* Bottom Graphic Info Box Overlay */}
