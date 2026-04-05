@@ -1,8 +1,47 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Star } from 'lucide-react';
 import bgVideo from '../../../assets/bg.mp4';
 
 const Hero = () => {
+  const words = ["REVENUE", "BUSINESS"];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const typingSpeed = 100;
+    const deletingSpeed = 60;
+    const delayBeforeDelete = 2500;
+    const delayBeforeType = 500;
+
+    const currentFullText = words[currentWordIndex];
+    let timer;
+
+    if (isDeleting) {
+      if (currentText === "") {
+        setIsDeleting(false);
+        setCurrentWordIndex((prev) => (prev + 1) % words.length);
+        timer = setTimeout(() => {}, delayBeforeType);
+      } else {
+        timer = setTimeout(() => {
+          setCurrentText(currentText.substring(0, currentText.length - 1));
+        }, deletingSpeed);
+      }
+    } else {
+      if (currentText === currentFullText) {
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, delayBeforeDelete);
+      } else {
+        timer = setTimeout(() => {
+          setCurrentText(currentFullText.substring(0, currentText.length + 1));
+        }, typingSpeed);
+      }
+    }
+
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, currentWordIndex]);
+
   return (
     <section className="relative w-full overflow-hidden bg-brand-black text-white text-center">
       {/* Background Video (now inherently covers the entire dynamic section including spacer) */}
@@ -25,9 +64,14 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 md:px-12 flex flex-col items-center justify-center min-h-screen pt-24 pb-12 w-full max-w-5xl">
 
         {/* Main Content */}
-        <h1 className="font-montserrat font-black text-5xl sm:text-6xl md:text-[5.5rem] lg:text-[7rem] leading-[0.95] tracking-tighter mb-8 uppercase text-white drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] mt-12">
-          We Multiply <br />
-          Your <span className="text-brand-green drop-shadow-[0_0_25px_rgba(187,246,0,0.4)]">Revenue</span>
+        <h1 className="font-montserrat font-black text-[3.5rem] min-[400px]:text-6xl sm:text-[4.5rem] md:text-[5.5rem] lg:text-[7rem] leading-[0.95] tracking-tighter mb-8 uppercase text-white drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] mt-12">
+          SCALE YOUR <br />
+           <span className="text-brand-green drop-shadow-[0_0_25px_rgba(187,246,0,0.4)] inline-flex items-center justify-center min-h-[1.1em]">
+             {currentText}
+             <span className="inline-block w-[5px] md:w-[10px] h-[0.8em] bg-brand-green ml-3 md:ml-4 opacity-80 animate-pulse rounded-sm" />
+           </span>
+           <br />
+           TODAY
         </h1>
 
         <p className="font-inter text-zinc-300 antialiased text-lg md:text-xl lg:text-[1.35rem] max-w-3xl mb-12 leading-relaxed">
